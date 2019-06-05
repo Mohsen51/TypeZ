@@ -1,0 +1,11 @@
+#word {
+    border-radius: 10px;
+}
+
+.letterBlock {
+    margin: 250px auto;
+    width: 80px;
+    text-align: center;
+    border: solid 3px;
+    border-radius: 15px;
+}
