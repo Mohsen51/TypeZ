@@ -10,19 +10,19 @@ header{
     height: 90px;
     width: 100%;
     background-color: #F0F0F0;
-    padding : 5px;
+    padding : 0px;
     text-align: center;
     margin-bottom: 10px;
 }
 
 #welcome{
-    height: 900px;
+    height: 1100px;
     width: 100%;
     background: no-repeat center url("media/illustration.png");
-    background-size: 95%;
+    background-size: 65%;
 }
 h1{
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
     font-size: 50pt;
     font-weight: lighter;
@@ -56,7 +56,7 @@ hr {
     width: 450px;
     height: 250px;
     border-radius: 10%/15%;
-    margin: 10px;
+    margin: 20px;
     background: #F0F0F0;
     box-shadow: 2px 2px 3px #606060;
     display: flex;
@@ -72,9 +72,103 @@ h3{
 }
 
 footer{
-    height: 400px;
+    height: 300px;
     width: 100%;
-    margin-top: 150px;
-    background-color: #606060;
-    text-align: center;
+    margin: 150px 0 0;
+    background-color: #1A1A1A;
+    padding: 0px;
+    color: #FFFF;
+}
+
+@media (max-width: 2500px) {
+    #welcome{
+        height: 950px;
+    }
+}
+
+@media (max-width: 2000px) {
+    #welcome{
+        height: 900px;
+        background-size: 75%;
+    }
+}
+
+@media (max-width: 1700px) {
+    #welcome{
+        background-size: 85%;
+    }
+    h1{
+        padding: 0;
+    }
+}
+
+@media (max-width: 1500px) {
+    #welcome {
+        background-size: 95%;
+    }
+}
+
+@media (max-width: 1300px) {
+    #welcome{
+        height: 750px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #welcome{
+        height: 600px;
+    }
+}
+
+@media (max-width: 800px) {
+    #welcome{
+        background-size:120%
+    }
+}
+
+@media (max-width: 600px) {
+    h1{
+        font-size: 35pt;
+    }
+    h2{
+        font-size: 25pt;
+    }
+    h3{
+        font-size: 20pt;
+    }
+    .gamebox{
+        width: 270px;
+        height: 150px;
+    }
+    #welcome{
+        height : 500px;
+        background-size: 150%;
+    }
+    hr{
+        width:50%;
+    }
+    footer{
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1{
+        font-size: 30pt;
+        padding: 5px;
+    }
+    h2{
+        font-size: 20pt;
+    }
+    h3{
+        font-size: 15pt;
+    }
+    .gamebox{
+        width: 220px;
+        height: 125px;
+    }
+    #welcome{
+        height : 400px;
+        background-size: 175%;
+    }
 }
