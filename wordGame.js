@@ -1,7 +1,3 @@
-/*window.onload = function() {
-    getData();
-}*/
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -10,12 +6,12 @@ var error = 0;
 var points = 0;
 var counter = 15;
 var letter = 0;
-function start() {
+function start(data) {
     document.getElementById("startBtn").style.display = "none";
-    starter();
+    starter(data);
 }
 
-async function starter() {
+async function starter(data) {
     var main = document.getElementById("corps");
     var div = document.createElement("div");
     var starter = document.createElement("h1");
@@ -30,7 +26,8 @@ async function starter() {
     await sleep(1000);
     document.getElementById("corps").innerHTML = "";
     timer();
-    addLetter();
+    document.addEventListener("keydown", function(event) { keyCode(event,data); });
+    addLetter(data);
 }
 
 function displayScore() {
@@ -51,7 +48,7 @@ async function timer() {
     timer.id = "timer";
     div.appendChild(timer);
     main.appendChild(div);
-    for (var counter=15;counter>=0;counter--)
+    for (var counter=5;counter>=0;counter--)
     {
         document.getElementById("timer").textContent="Il reste "+"("+[counter]+"s)";
         await sleep(1000);
@@ -59,19 +56,19 @@ async function timer() {
     displayScore();
 }
 
-function keyCode(event,i) {
+function keyCode(event,data) {
     var x = event.keyCode;
     var word = document.getElementById("letter").textContent;
-    console.log(word[letter]);
-    var n = word[letter].charCodeAt();
+    var size = word.length;
+    var n = word[letter].charCodeAt() - 32;
     if (x === n) {
         letter+=1;
-        if (letter===2) {
+        if (letter===size) {
             error=0;
             points+=1;
             letter=0;
             document.querySelector("#letterDiv").remove();
-            addLetter();
+            addLetter(data);
         }
     }
     else if (error===0)
@@ -82,14 +79,13 @@ function keyCode(event,i) {
         wrong();
     }    
     else
+    {
         points-=1;
+    }
 }
 
-function addLetter() {
+function addLetter(data) {
     var n = Math.floor(Math.random() * 26);
-    var chr = String.fromCharCode(65 + n);
-    var n = Math.floor(Math.random() * 26);
-    var chr2 = String.fromCharCode(65 + n);
     var main = document.getElementById("corps");
     var div = document.createElement("div");
     div.id = "letterDiv";
@@ -97,11 +93,10 @@ function addLetter() {
     div2.className = "letterBlock";
     var letter = document.createElement("h1");
     letter.id = "letter";
-    letter.textContent = chr + chr2;
+    letter.textContent = data[n];
     div2.appendChild(letter);
     div.appendChild(div2);
     main.appendChild(div);
-    document.addEventListener('keydown',keyCode);
 }
 
 function wrong() {
@@ -114,13 +109,10 @@ function wrong() {
     div.appendChild(div2);
     main.appendChild(div);
 }
-
-/*function getData(){
-fetch('get_data')
+function getData(){
+    fetch('https://raw.githubusercontent.com/paritytech/wordlist/master/res/wordlist.json')
     .then(response => response.json())                                    	 
     .then(function (data) {
-        console.log(data);
-
-    data.forEach(function(item, index, array){
-        ajouter(item);
-});*/
+        start(data);
+    })
+}
