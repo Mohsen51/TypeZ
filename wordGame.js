@@ -48,7 +48,7 @@ async function timer() {
     timer.id = "timer";
     div.appendChild(timer);
     main.appendChild(div);
-    for (var counter=5;counter>=0;counter--)
+    for (var counter=20;counter>=0;counter--)
     {
         document.getElementById("timer").textContent="Il reste "+"("+[counter]+"s)";
         await sleep(1000);
@@ -85,12 +85,11 @@ function keyCode(event,data) {
 }
 
 function addLetter(data) {
-    var n = Math.floor(Math.random() * 26);
+    var n = Math.floor(Math.random() * 7775);
     var main = document.getElementById("corps");
     var div = document.createElement("div");
     div.id = "letterDiv";
     var div2 = document.createElement("div");
-    div2.className = "letterBlock";
     var letter = document.createElement("h1");
     letter.id = "letter";
     letter.textContent = data[n];
