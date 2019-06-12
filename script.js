@@ -1,13 +1,35 @@
 /*window.onload = function() {
     getData();
 }*/
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 var error = 0;
 var points = 0;
 var counter = 15;
 function start() {
     document.getElementById("startBtn").style.display = "none";
+    starter();
+}
+
+async function starter() {
+    var main = document.getElementById("corps");
+    var div = document.createElement("div");
+    var starter = document.createElement("h1");
+    div.appendChild(starter);
+    main.appendChild(div);
+    for (var i=3;i>0;i--)
+    { 
+        starter.textContent = i;
+        await sleep(1000);
+    }
+    starter.textContent = "GO";
+    await sleep(1000);
+    document.getElementById("corps").innerHTML = "";
     timer();
-    Decrement();
+    addLetter();
 }
 
 function displayScore() {
@@ -20,14 +42,20 @@ function displayScore() {
     main.appendChild(div);
 }
 
-function timer() {
+async function timer() {
     var main = document.getElementById("corps");
     var div = document.createElement("div");
+    div.id = "time";
     var timer = document.createElement("p");
     timer.id = "timer";
     div.appendChild(timer);
     main.appendChild(div);
-    addLetter();
+    for (var counter=15;counter>=0;counter--)
+    {
+        document.getElementById("timer").textContent="Il reste "+"("+[counter]+"s)";
+        await sleep(1000);
+    }
+    displayScore();
 }
 
 function keyCode(event) {
@@ -36,9 +64,9 @@ function keyCode(event) {
     var n = word.charCodeAt();
     if (x === n) {
         points+=1;
-        document.querySelector("#corps").innerHTML = "";
-        timer();
         error=0;
+        document.querySelector("#letterDiv").remove();
+        addLetter();
     }
     else if (error===0)
     {
@@ -55,6 +83,7 @@ function addLetter() {
     var chr = String.fromCharCode(65 + n);
     var main = document.getElementById("corps");
     var div = document.createElement("div");
+    div.id = "letterDiv";
     div.className = "letterBlock";
     var letter = document.createElement("h1");
     letter.id = "letter";
@@ -71,18 +100,6 @@ function wrong() {
     message.textContent = "Wrong letter";
     div.appendChild(message);
     main.appendChild(div);
-}
- 
-function Decrement() { 
-    if (counter < 0) {  
-        counter.value = 0;
-        displayScore(); 
-    } 
-    else { 
-        document.getElementById("timer").textContent="Il reste "+"("+[counter]+"s)";
-        counter--; 
-        setTimeout('Decrement()', 1000); 
-    }
 }
 
 /*function getData(){
