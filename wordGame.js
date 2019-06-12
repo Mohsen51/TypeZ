@@ -9,6 +9,7 @@ function sleep(ms) {
 var error = 0;
 var points = 0;
 var counter = 15;
+var letter = 0;
 function start() {
     document.getElementById("startBtn").style.display = "none";
     starter();
@@ -58,18 +59,24 @@ async function timer() {
     displayScore();
 }
 
-function keyCode(event) {
+function keyCode(event,i) {
     var x = event.keyCode;
     var word = document.getElementById("letter").textContent;
-    var n = word.charCodeAt();
+    console.log(word[letter]);
+    var n = word[letter].charCodeAt();
     if (x === n) {
-        points+=1;
-        error=0;
-        document.querySelector("#letterDiv").remove();
-        addLetter();
+        letter+=1;
+        if (letter===2) {
+            error=0;
+            points+=1;
+            letter=0;
+            document.querySelector("#letterDiv").remove();
+            addLetter();
+        }
     }
     else if (error===0)
     {
+        letter=0;
         points-=1;
         error=1;
         wrong();
@@ -81,24 +88,30 @@ function keyCode(event) {
 function addLetter() {
     var n = Math.floor(Math.random() * 26);
     var chr = String.fromCharCode(65 + n);
+    var n = Math.floor(Math.random() * 26);
+    var chr2 = String.fromCharCode(65 + n);
     var main = document.getElementById("corps");
     var div = document.createElement("div");
     div.id = "letterDiv";
-    div.className = "letterBlock";
+    var div2 = document.createElement("div");
+    div2.className = "letterBlock";
     var letter = document.createElement("h1");
     letter.id = "letter";
-    letter.textContent = chr;
-    div.appendChild(letter);
+    letter.textContent = chr + chr2;
+    div2.appendChild(letter);
+    div.appendChild(div2);
     main.appendChild(div);
     document.addEventListener('keydown',keyCode);
 }
 
 function wrong() {
     var main = document.getElementById("corps");
-    var div = document.createElement("div");
+    var div = document.getElementById("letterDiv");
+    var div2 = document.createElement("div");
     var message = document.createElement("h1");
-    message.textContent = "Wrong letter";
-    div.appendChild(message);
+    message.textContent = "You missclicked, try again the entire word";
+    div2.appendChild(message);
+    div.appendChild(div2);
     main.appendChild(div);
 }
 
