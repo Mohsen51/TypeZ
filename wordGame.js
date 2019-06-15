@@ -91,7 +91,7 @@ function addLetter(data) {
     var div = document.createElement("div");
     div.id = "letterDiv";
     var div2 = document.createElement("div");
-    var letter = document.createElement("p");
+    var letter = document.createElement("h2");
     letter.id = "letter";
     letter.textContent = data[n];
     div2.appendChild(letter);
