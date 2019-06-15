@@ -228,8 +228,19 @@ h5{
     text-align: center;
 }
 
-p{
+#story{
+    width: 70%;
+    margin: 0 auto;
+}
+
+#story h4{
     text-align: center;
+    margin: 10px 0 0;
+}
+
+p{
+    text-align: justify;
+    text-indent: 30px;
     margin: 0;
 }
 
