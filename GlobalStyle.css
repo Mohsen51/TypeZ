@@ -231,6 +231,7 @@ p{
 
 main{
     height: 300px;
+    text-align: center;
 }
 
 .letterBlock {
@@ -253,8 +254,7 @@ main{
     font-weight: 400;
 }
 
-#corps li{
+#corps ul{
     padding: 10px;
-    text-align: center;
     list-style: none;
 }
