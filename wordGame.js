@@ -34,7 +34,7 @@ function displayScore() {
     document.querySelector("#corps").innerHTML = "";
     var main = document.getElementById("corps");
     var div = document.createElement("div");
-    var message = document.createElement("h1");
+    var message = document.createElement("h3");
     message.textContent = "You earned "+points+" points";
     div.appendChild(message);
     main.appendChild(div);
@@ -90,7 +90,7 @@ function addLetter(data) {
     var div = document.createElement("div");
     div.id = "letterDiv";
     var div2 = document.createElement("div");
-    var letter = document.createElement("h1");
+    var letter = document.createElement("p");
     letter.id = "letter";
     letter.textContent = data[n];
     div2.appendChild(letter);
@@ -102,7 +102,7 @@ function wrong() {
     var main = document.getElementById("corps");
     var div = document.getElementById("letterDiv");
     var div2 = document.createElement("div");
-    var message = document.createElement("h1");
+    var message = document.createElement("h3");
     message.textContent = "You misstyped, try again the entire word";
     div2.appendChild(message);
     div.appendChild(div2);
