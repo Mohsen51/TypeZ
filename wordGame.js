@@ -58,29 +58,30 @@ async function timer() {
 
 function keyCode(event,data) {
     var x = event.keyCode;
-    var word = document.getElementById("letter").textContent;
-    var size = word.length;
-    var n = word[letter].charCodeAt() - 32;
-    if (x === n) {
-        letter+=1;
-        if (letter===size) {
-            error=0;
-            points+=1;
+    if (x>64 && x<91)
+    {
+        var word = document.getElementById("letter").textContent;
+        var size = word.length;
+        var n = word[letter].charCodeAt() - 32;
+        if (x === n) {
+            letter+=1;
+            if (letter===size) {
+                error=0;
+                points+=1;
+                letter=0;
+                document.querySelector("#letterDiv").remove();
+                addLetter(data);
+            }
+        }
+        else
+        {
             letter=0;
+            error=1;
+            points-=1;
             document.querySelector("#letterDiv").remove();
             addLetter(data);
+            wrong();
         }
-    }
-    else if (error===0)
-    {
-        letter=0;
-        points-=1;
-        error=1;
-        wrong();
-    }    
-    else
-    {
-        points-=1;
     }
 }
 
