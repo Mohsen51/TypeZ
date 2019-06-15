@@ -38,13 +38,13 @@ function displayScore() {
     document.querySelector("#corps").innerHTML = "";
     var main = document.getElementById("corps");
     var div = document.createElement("div");
-    var message = document.createElement("h1");
+    var message = document.createElement("h3");
     message.textContent = "You earned "+points+" point(s)";
     var list = document.createElement("ul");
     var rightResp = document.createElement("li");
-    rightResp.textContent = "Right response(s) : " + right;
+    rightResp.textContent = "Right answer(s) : " + right;
     var wrongResp = document.createElement("li");
-    wrongResp.textContent = "Wrong response(s) : " + wrong;
+    wrongResp.textContent = "Wrong answer(s) : " + wrong;
     list.appendChild(rightResp);
     list.appendChild(wrongResp);
     div.appendChild(message);
@@ -101,7 +101,7 @@ function addLetter() {
     div.id = "letterDiv";
     var div2 = document.createElement("div");
     div2.className = "letterBlock";
-    var letter = document.createElement("h1");
+    var letter = document.createElement("p");
     letter.id = "letter";
     letter.textContent = chr;
     div2.appendChild(letter);
@@ -114,7 +114,7 @@ function wrong() {
     var main = document.getElementById("corps");
     var div = document.getElementById("letterDiv");
     var div2 = document.createElement("div");
-    var message = document.createElement("h1");
+    var message = document.createElement("h3");
     message.textContent = "Wrong letter";
     div2.appendChild(message);
     div.appendChild(div2);

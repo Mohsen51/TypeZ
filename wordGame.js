@@ -103,7 +103,7 @@ function wrong() {
     var div = document.getElementById("letterDiv");
     var div2 = document.createElement("div");
     var message = document.createElement("h1");
-    message.textContent = "You missclicked, try again the entire word";
+    message.textContent = "You misstyped, try again the entire word";
     div2.appendChild(message);
     div.appendChild(div2);
     main.appendChild(div);
