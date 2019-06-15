@@ -239,16 +239,13 @@ main{
     padding: 0;
     width: 80px;
     height: 80px;
-    text-align: center;
     border: solid 3px;
     border-radius: 15px;
-    font-size: 20pt;
 }
 
 .letterBlock p{
     margin: 0;
     padding: 10px 0;
-    text-align: center;
     text-transform: uppercase;
     font-size: 40px;
     font-weight: 400;
