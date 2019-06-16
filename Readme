@@ -1,0 +1,12 @@
+---TypeZ The best way to learn typing---
+PROJET A2 WEB
+
+The CodeZZ team has rebuilt a part of its team to always enhance user experience. The web project we developed is a game to learn typing faster.
+The project contains 5 pages : The home page, the word game, the letter game, a contact page and an "about us" page.
+This website is built to be interactive. There are two games that use Javascript to read keyboard input.
+It is built to be responsive, we used Js and CSS to perform this : css allows us to use media queries to adapt content to se size of user's screen,
+and Js allows us to buid a burger menu, that is usable and userfriendly on both desktop and mobile browser. Nonetheless, the minimum size to
+use our website, nevertheless is 200px.
+
+The website is fully responsive, apart form the about-us page, we used flex-box, but the content doesn't wrap properly.
+Plus, we were unable to test the gaming experience on a real phone.

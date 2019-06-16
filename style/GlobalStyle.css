@@ -1,0 +1,426 @@
+*{
+    font-family: "Segoe UI";
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    height: 115px;
+    width: 100%;
+    background-color: #F0F0F0;
+    padding : 0px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#welcome{
+    height: 1100px;
+    width: 100%;
+    background: no-repeat center url("../media/illustration.png");
+    background-size: 65%;
+}
+h1{
+    padding: 10px 0;
+    text-align: center;
+    font-size: 50pt;
+    font-weight: lighter;
+}
+
+h2{
+    margin: 40px auto 0;
+    padding: 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30pt;
+    font-weight: 400;
+}
+
+hr {
+    margin: 40px auto;
+    width: 40%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #606060;
+}
+
+.formStyle {
+    background-color: white;
+    padding: 10px;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    box-shadow: 2px 2px 2px;
+    margin-bottom: 10px;
+}
+
+.form {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.rules {
+    margin: 40px auto 0;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.btn {
+    background-color: #f0f0f0;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f0f0f3;
+    box-shadow: 1px 1px 1px #606060;
+}
+
+#boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamebox{
+    width: 450px;
+    height: 250px;
+    border-radius: 10%/15%;
+    margin: 20px;
+    background: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.gamebox:hover {
+    background-color: #F0F0F3;
+    box-shadow: 2px 2px 3px #606060;
+}
+
+h3{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+footer{
+    width: 100%;
+    margin: 150px 0 0;
+    background-color: #1A1A1A;
+    padding: 0px;
+    color: #FFFF;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.row{
+    flex: 200px;
+    margin: 30px;
+    text-align: center;
+}
+
+.row p{
+    text-align: center;
+    text-indent: 0px;
+}
+
+footer #Social{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.items{
+    text-align: center;
+}
+
+.items image{
+
+}
+
+h4{
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0 0 2em;
+}
+
+footer a{
+    text-decoration: none;
+    font-weight: lighter;
+    color: white;
+}
+
+@media (max-width: 2500px) {
+    #welcome{
+        height: 950px;
+    }
+}
+
+@media (max-width: 2000px) {
+    #welcome{
+        height: 900px;
+        background-size: 75%;
+    }
+}
+
+@media (max-width: 1700px) {
+    #welcome{
+        background-size: 85%;
+    }
+    h1{
+        padding: 0;
+    }
+}
+
+@media (max-width: 1500px) {
+    #welcome {
+        background-size: 95%;
+    }
+}
+
+@media (max-width: 1300px) {
+    #welcome{
+        height: 750px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #welcome{
+        height: 600px;
+    }
+}
+
+@media (max-width: 800px) {
+    #welcome{
+        background-size:120%
+    }
+}
+
+@media (max-width: 600px) {
+    h1{
+        font-size: 35pt;
+    }
+    h2{
+        font-size: 25pt;
+    }
+    h3{
+        font-size: 20pt;
+    }
+    .gamebox{
+        width: 270px;
+        height: 150px;
+    }
+    #welcome{
+        height : 500px;
+        background-size: 150%;
+    }
+    hr{
+        width:50%;
+    }
+    footer{
+        margin-top: 50px;
+    }
+    p{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1{
+        font-size: 30pt;
+        padding: 5px;
+    }
+    h2{
+        font-size: 20pt;
+    }
+    h3{
+        font-size: 15pt;
+    }
+    .gamebox{
+        width: 220px;
+        height: 125px;
+    }
+    #welcome{
+        height : 400px;
+        background-size: 175%;
+    }
+    p{
+        font-size: 10px;
+    }
+}
+
+#portraits{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.photo{
+    border-radius: 50%;
+    margin: 0 20px;
+}
+
+h5{
+    margin: 1em 0 0;
+    font-weight: lighter;
+    text-align: center;
+}
+
+#story{
+    width: 70%;
+    margin: 0 auto;
+}
+
+#story h4{
+    text-align: center;
+    margin: 10px 0 0;
+}
+
+p{
+    text-align: justify;
+    text-indent: 30px;
+    margin: 0;
+}
+
+main{
+    height: 300px;
+    text-align: center;
+}
+
+.letterBlock {
+    margin: 20px auto;
+    padding: 0;
+    width: 80px;
+    height: 80px;
+    border: solid 3px;
+    border-radius: 15px;
+}
+
+.letterBlock p{
+    text-align: center;
+    text-indent: 0;
+    margin: 0;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+#corps ul{
+    padding: 10px;
+    list-style: none;
+}
+
+.logoH{
+    width: 100px;
+    height:100px;
+    margin:0 auto;
+    padding:10px;
+}
+
+#overlay{
+    display:none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.burger, .content{
+    display:inline;
+    font-family:"Segoe UI";
+    text-indent: 0;
+}
+
+.burger ul{
+    margin: 0;
+    padding: 0;
+}
+
+#burger-button{
+    cursor : pointer;
+    background:none;
+    border:none;
+    font-size:30px;
+    padding:0;
+    float:left;
+    vertical-align:top;
+    margin-left:30px;
+}
+
+#burger-sidebar{
+    display:none;
+    position:fixed;
+    width:300px;
+    z-index:20;
+    height:100%;
+    top:0;
+    left:0;
+    background-color:whitesmoke;
+    transform: translateX(-100%);
+    transition:transform .25s ease-out;
+}
+
+#burger-sidebar li {
+    display:block;
+}
+.content a{
+    color:black;
+    text-decoration:none;
+}
+
+#burger-sidebar-body {
+    padding : 16px 8px;
+}
+#burger-sidebar-header{
+    background:url(../media/TypeZ.png)center;
+    background-size: cover;
+    height: 128px;
+}
+
+#burger-sidebar-body li::before{
+    display:inline-block;
+    vertical-align:middle;
+    width:20px;
+    height:20px;
+    border : 3px solid black;
+    margin-right:20px;
+    margin-bottom:5px;
+}
+#burger-sidebar-body .button{
+    margin-top: 16px;
+    text-align: center;
+    float: none;
+    display: block;
+    height: auto;
+    line-height: inherit;
+    padding: 10px;
+}
+
+#burger-button, #burger-sidebar, .activated #overlay{
+    display:block;
+}
+
+.activated #burger-sidebar{
+    transform:translateX(0);
+}
