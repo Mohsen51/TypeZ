@@ -45,13 +45,33 @@ hr {
     border-color: #606060;
 }
 
+.formStyle {
+    background-color: white;
+    padding: 10px;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    box-shadow: 2px 2px 2px;
+    margin-bottom: 10px;
+}
+
+.form {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
 .rules {
     margin: 40px auto 0;
     padding: 0 15px;
     text-align: center;
 }
 
-#startBtn {
+.btn {
     background-color: #f0f0f0;
     border: none;
     color: black;
@@ -64,7 +84,7 @@ hr {
     cursor: pointer;
 }
 
-#startBtn:hover {
+.btn:hover {
     background-color: #f0f0f3;
     box-shadow: 1px 1px 1px #606060;
 }

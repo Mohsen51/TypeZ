@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/Style/GlobalStyle.css">
-    <script src="/Js/wordGame.js"></script>
-    <title>TypeZ - Word Game</title>
+    <title>TypeZ - About us</title>
+    <link rel="stylesheet" href="/Style/GlobalStyle.css">
+    <script src="js/form.js"></script>
 </head>
 <body>
     <header>
@@ -32,11 +31,25 @@
             <div id="overlay"></div>
         </div>
     </header>
-    <h1>Word game !</h1>
-    <main id="corps">
-        <button type="button" id="startBtn" class="btn" onclick="getData()">start</button>
-        <p class="rules">The word game aims to train your dexterity to type as fast as possible. The game is simple : a word will be displayed on your screen. You have to type the entire word as fast as possible. You will have 30 seconds to type as much word as possible. A right answer worth two points. A wrong answer will penalize you with 1 point penalty. The spelling check is continuous, the first letter that doesn't follow the chain of character of the word will Mark the word as fail. Each time you fail a word, a new word is generated and a message is displayed.
-                Have fun !</p>
+    <main id="main">
+        <form name="info" class="formStyle" id="Form">
+            <div class="form">
+                <input type="text" id="first_name" name="user_first_name" placeholder="Enter your first name">
+                <input type="text" id="last_name" name="user_last_name" placeholder="Enter your last name">
+                <input type="email" id="email" name="user_email" placeholder="Enter your email">
+                <select id="role">
+                    <option value="gender">Mr</option>
+                    <option value="gender">Mrs</option>
+                </select>
+            </div>
+            <div>
+                <textarea rows="5" cols="80" id="Message" placeholder="Enter a message here">
+                    </textarea>
+            </div>
+            <div class="button">
+                <button type="button" class="btn" id="add" onclick="ajouter()">Contact us</button>
+            </div>
+        </form>
     </main>
     <footer>
         <div class="row">
