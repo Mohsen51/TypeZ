@@ -3,15 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="GlobalStyle.css">
-    <script src="wordGame.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Style/GlobalStyle.css">
+    <script src="/Js/wordGame.js"></script>
     <title>TypeZ - Word Game</title>
 </head>
 <body>
-    <header>Temporary header</header>
+    <header>
+        <div class="logoH">
+            <img src="media/Logo.svg">
+        </div>
+        <div class="burger">
+            <div class="content">
+                <nav>
+                <ul>
+                    <li><a href="Index.html">HOME</a></li>
+                    <li><a href="wordGame.html">WORD GAME</a></li>
+                    <li><a href="letterGame.html">LETTER GAME</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="AboutUs.html">ABOUT US</a></li>
+                </ul>
+                </nav>
+            </div>
+            <button id="burger-button">&#9776;</button>
+            <div id="burger-sidebar">
+                <div id="burger-sidebar-header"></div>
+                <div id="burger-sidebar-body"></div>
+            </div>
+            <div id="overlay"></div>
+        </div>
+    </header>
     <h1>Word game !</h1>
     <main id="corps">
         <button type="button" id="startBtn" onclick="getData()">start</button>
+        <p class="rules">The word game aims to train your dexterity to type as fast as possible. The game is simple : a word will be displayed on your screen. You have to type the entire word as fast as possible. You will have 30 seconds to type as much word as possible. A right answer worth two points. A wrong answer will penalize you with 1 point penalty. The spelling check is continuous, the first letter that doesn't follow the chain of character of the word will Mark the word as fail. Each time you fail a word, a new word is generated and a message is displayed.
+                Have fun !</p>
     </main>
     <footer>
         <div class="row">
@@ -47,5 +72,6 @@
             </a>
         </div>
     </footer>
+    <script src="/js/burger.js"></script>
 </body>
 </html>

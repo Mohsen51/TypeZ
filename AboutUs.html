@@ -2,27 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="GlobalStyle.css">
+    <title>TypeZ - About us</title>
+    <link rel="stylesheet" href="/Style/GlobalStyle.css">
 </head>
 <body>
-    <header>Temporary header</header>
+    <header>
+        <div class="logoH">
+            <img src="media/Logo.svg">
+        </div>
+        <div class="burger">
+            <div class="content">
+                <nav>
+                <ul>
+                    <li><a href="Index.html">HOME</a></li>
+                    <li><a href="wordGame.html">WORD GAME</a></li>
+                    <li><a href="letterGame.html">LETTER GAME</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="AboutUs.html">ABOUT US</a></li>
+                </ul>
+                </nav>
+            </div>
+            <button id="burger-button">&#9776;</button>
+            <div id="burger-sidebar">
+                <div id="burger-sidebar-header"></div>
+                <div id="burger-sidebar-body"></div>
+            </div>
+            <div id="overlay"></div>
+        </div>
+    </header>
     <div id="team">
         <h1>Discover the TypeZ team</h1>
         <h2>Our Team</h2>
         <div id="portraits">
             <div>
-                <img src="media/portrait/greg.jpg" width="100px" height="100px" class="photo"/>
+                <img src="../media/portrait/gregoire.jpg" width="100px" height="100px" class="photo"/>
                 <h5>Chief Information Officer</h5>
                 <p>Gregoire Mazardin</p>
             </div>
             <div>
-                <img src="media/portrait/IMG_0868 (2).png" width="100px" height="100px" class="photo"/>
+                <img src="../media/portrait/Hugo.png" width="100px" height="100px" class="photo"/>
                 <h5>Chief Design Officer</h5>
                 <p>Hugo Butery</p>
             </div>
             <div>
-                <img src="media/portrait/antoine.jpg" width="100px" height="100px" class="photo"/>
+                <img src="../media/portrait/antoine.jpg" width="100px" height="100px" class="photo"/>
                 <h5>Chief Technology Officer</h5>
                 <p>Antoine Ansari</p>
             </div>
@@ -67,5 +90,6 @@
             </a>
         </div>
     </footer>
+    <script src="/js/burger.js"></script>
 </body>
 </html>

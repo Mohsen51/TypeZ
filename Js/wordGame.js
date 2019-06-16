@@ -1,22 +1,18 @@
-/*window.onload = function() {
-    getData();
-}*/
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 var error = 0;
-var wrong = 0;
-var right = 0;
 var points = 0;
 var counter = 15;
-function start() {
+var letter = 0;
+function start(data) {
     document.getElementById("startBtn").style.display = "none";
-    starter();
+    document.querySelector(".rules").style.display = "none";
+    starter(data);
 }
 
-async function starter() {
+async function starter(data) {
     var main = document.getElementById("corps");
     var div = document.createElement("div");
     var starter = document.createElement("h1");
@@ -31,7 +27,8 @@ async function starter() {
     await sleep(1000);
     document.getElementById("corps").innerHTML = "";
     timer();
-    addLetter();
+    document.addEventListener("keydown", function(event) { keyCode(event,data); });
+    addLetter(data);
 }
 
 function displayScore() {
@@ -39,16 +36,8 @@ function displayScore() {
     var main = document.getElementById("corps");
     var div = document.createElement("div");
     var message = document.createElement("h3");
-    message.textContent = "You earned "+points+" point(s)";
-    var list = document.createElement("ul");
-    var rightResp = document.createElement("li");
-    rightResp.textContent = "Right answer(s) : " + right;
-    var wrongResp = document.createElement("li");
-    wrongResp.textContent = "Wrong answer(s) : " + wrong;
-    list.appendChild(rightResp);
-    list.appendChild(wrongResp);
+    message.textContent = "You earned "+points+" points";
     div.appendChild(message);
-    div.appendChild(list);
     main.appendChild(div);
 }
 
@@ -60,7 +49,7 @@ async function timer() {
     timer.id = "timer";
     div.appendChild(timer);
     main.appendChild(div);
-    for (var counter=5;counter>=0;counter--)
+    for (var counter=30;counter>=0;counter--)
     {
         document.getElementById("timer").textContent="Il reste "+"("+[counter]+"s)";
         await sleep(1000);
@@ -68,49 +57,47 @@ async function timer() {
     displayScore();
 }
 
-function keyCode(event) {
+function keyCode(event,data) {
     var x = event.keyCode;
     if (x>64 && x<91)
     {
         var word = document.getElementById("letter").textContent;
-        var n = word.charCodeAt();
+        var size = word.length;
+        var n = word[letter].charCodeAt() - 32;
         if (x === n) {
-            right+=1;
-            points+=1;
-            error=0;
-            document.querySelector("#letterDiv").remove();
-            addLetter();
+            letter+=1;
+            if (letter===size) {
+                error=0;
+                points+=2;
+                letter=0;
+                document.querySelector("#letterDiv").remove();
+                addLetter(data);
+            }
         }
-        else if (error===0)
-        {
-            wrong+=1;
-            points-=1;
-            error=1;
-            wrong();
-        }    
         else
         {
-            wrong+=1;
+            letter=0;
+            error=1;
             points-=1;
+            document.querySelector("#letterDiv").remove();
+            addLetter(data);
+            wrong();
         }
     }
 }
 
-function addLetter() {
-    var n = Math.floor(Math.random() * 26);
-    var chr = String.fromCharCode(65 + n);
+function addLetter(data) {
+    var n = Math.floor(Math.random() * 7775);
     var main = document.getElementById("corps");
     var div = document.createElement("div");
     div.id = "letterDiv";
     var div2 = document.createElement("div");
-    div2.className = "letterBlock";
-    var letter = document.createElement("p");
+    var letter = document.createElement("h2");
     letter.id = "letter";
-    letter.textContent = chr;
+    letter.textContent = data[n];
     div2.appendChild(letter);
     div.appendChild(div2);
     main.appendChild(div);
-    document.addEventListener('keydown',keyCode);
 }
 
 function wrong() {
@@ -118,18 +105,15 @@ function wrong() {
     var div = document.getElementById("letterDiv");
     var div2 = document.createElement("div");
     var message = document.createElement("h3");
-    message.textContent = "Wrong letter";
+    message.textContent = "You misstyped, try again the entire word";
     div2.appendChild(message);
     div.appendChild(div2);
     main.appendChild(div);
 }
-
-/*function getData(){
-fetch('get_data')
+function getData(){
+    fetch('https://raw.githubusercontent.com/paritytech/wordlist/master/res/wordlist.json')
     .then(response => response.json())                                    	 
     .then(function (data) {
-        console.log(data);
-
-    data.forEach(function(item, index, array){
-        ajouter(item);
-});*/
+        start(data);
+    })
+}

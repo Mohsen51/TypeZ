@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TypeZ Main</title>
-    <link rel="stylesheet" href="GlobalStyle.css">
+    <link rel="stylesheet" href="/Style/GlobalStyle.css">
 </head>
 <body>
-    <header>Temporary header</header>
+    <header>
+        <div class="logoH">
+            <img src="media/Logo.svg">
+        </div>
+        <div class="burger">
+            <div class="content">
+                <nav>
+                <ul>
+                    <li><a href="Index.html">HOME</a></li>
+                    <li><a href="wordGame.html">WORD GAME</a></li>
+                    <li><a href="letterGame.html">LETTER GAME</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="AboutUs.html">ABOUT US</a></li>
+                </ul>
+                </nav>
+            </div>
+            <button id="burger-button">&#9776;</button>
+            <div id="burger-sidebar">
+                <div id="burger-sidebar-header"></div>
+                <div id="burger-sidebar-body"></div>
+            </div>
+            <div id="overlay"></div>
+        </div>
+    </header>
     <div id="welcome"></div>
     <div id="Jeux">
         <h1>TypeZ is the best way to learn typing</h1>
@@ -56,5 +79,6 @@
             </a>
         </div>
     </footer>
+    <script src="/js/burger.js"></script>
 </body>
 </html>
