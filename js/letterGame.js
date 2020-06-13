@@ -11,6 +11,7 @@ var wrong = 0;
 var right = 0;
 var points = 0;
 var counter = 15;
+
 function start() {
     document.getElementById("startBtn").style.display = "none";
     document.querySelector(".rules").style.display = "none";
@@ -87,7 +88,7 @@ function keyCode(event) {
             wrong+=1;
             points-=1;
             error=1;
-            wrong();
+            wrongLetter();
         }    
         else
         {
@@ -114,7 +115,7 @@ function addLetter() {
     document.addEventListener('keydown',keyCode);
 }
 
-function wrong() {
+function wrongLetter() {
     var main = document.getElementById("corps");
     var div = document.getElementById("letterDiv");
     var div2 = document.createElement("div");
